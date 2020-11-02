@@ -10,7 +10,7 @@ import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
-import re
+# import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     
     text = st.text_input("Input your text here")
     
-    text = re.sub('[^a-zA-Z]', ' ', text)
+    # text = re.sub('[^a-zA-Z]', ' ', text)
     text = text.lower()
 
     words = nltk.word_tokenize(text)
