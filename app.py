@@ -31,7 +31,7 @@ if __name__ == "__main__":
     text = re.sub('[^a-zA-Z]', ' ', text)
     text = text.lower()
 
-    words = nltk.word_tokenize(text)
+    words = text.split()
     for j, word in enumerate(words):
         if word in set(stopwords.words('english')):
             words.remove(word)
