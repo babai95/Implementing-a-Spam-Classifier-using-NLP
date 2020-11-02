@@ -5,13 +5,13 @@ Created on Tue Nov  3 00:40:36 2020
 @author: sayagupt
 """
 import nltk
+from nltk.corpus import stopwords
 nltk.download('stopwords')
 import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
 import re
-from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 pickle_in = open("model.pkl","rb")
