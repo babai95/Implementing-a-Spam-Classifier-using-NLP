@@ -1,6 +1,6 @@
 numpy
 scikit-learn
-pandasre
+pandas
 streamlit
 nltk
 regex
