@@ -13,9 +13,11 @@ import pandas as pd
 import streamlit as st
 import re
 from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 pickle_in = open("model.pkl","rb")
 classifier=pickle.load(pickle_in)
+lemmatizer = WordNetLemmatizer()
 
 if __name__ == "__main__":
     st.title("Spam Classification")
@@ -41,13 +43,11 @@ if __name__ == "__main__":
     
     text = [text]
     
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    cv = TfidfVectorizer()
-    X = cv.fit_transform(text).toarray()
-    
     str = "Predict whether message is spam or not"
     if st.button("Predict"):
-        y = classifier.predict(vect)
+        cv = TfidfVectorizer()
+        X = cv.fit_transform(text).toarray()
+        y = classifier.predict(X)
         if(y == 0):
             str = "The message is not a spam"
         else:
