@@ -14,10 +14,8 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-pickle_in = open("C:\Projects\Project 6 - Spam Classification using NLP\model.pkl","rb")
+pickle_in = open("model.pkl","rb")
 classifier=pickle.load(pickle_in)
-
-lemmatizer = WordNetLemmatizer()
 
 if __name__ == "__main__":
     st.title("Spam Classification")
@@ -49,7 +47,7 @@ if __name__ == "__main__":
     
     str = "Predict whether message is spam or not"
     if st.button("Predict"):
-        y = classifier.predict(X)
+        y = classifier.predict(vect)
         if(y == 0):
             str = "The message is not a spam"
         else:
