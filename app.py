@@ -7,6 +7,7 @@ Created on Tue Nov  3 00:40:36 2020
 import nltk
 from nltk.corpus import stopwords
 nltk.download('stopwords')
+nltk.download('wordnet')
 import numpy as np
 import pickle
 import pandas as pd
